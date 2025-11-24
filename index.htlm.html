@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinicius Torres - Personal Trainer</title>
+  <meta name="description" content="Transforme seu corpo com Vinicius Torres, Personal Trainer especializado em Fisiologia do Exercício, Hipertrofia e Emagrecimento. Treinamento presencial, online e acompanhamento completo.">
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" type="image/png">
+  <style>
+    /* Estilos Globais */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo img {
+      height: 40px;
+    }
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      display: none; /* Menu hamburguer oculto por padrão */
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+    .red-text {
+      color: #e50000;
+    }
+    /* Seção Principal - Transforme Metas */
+    .hero {
+      text-align: center;
+      padding: 120px 0 80px 0;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fundo-academia.jpg') no-repeat center center/cover;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .hero .cta-button {
+      display: inline-block;
+      background-color: #e50000;
+      color: #fff;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .hero .cta-button:hover {
+      background-color: #ff3333;
+    }
+    /* Seções de Conteúdo */
+    .section {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .section-header {
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    /* Quem é Vinicius Torres? */
+    .about-us p {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .diferenciais-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+    .diferenciais-list li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 1.1em;
+    }
+    .diferenciais-list li::before {
+      content: '✓';
+      color: #e50000;
+      font-size: 1.5em;
+      margin-right: 10px;
+    }
+    /* Metodologia */
+    .step {
+      margin-bottom: 40px;
+    }
+    .step h3 {
+      font-size: 2.5em;
+      color: #e50000;
+      margin-bottom: 5px;
+      line-height: 1;
+    }
+    .step h4 {
+      font-size: 1.3em;
+      color: #fff;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .step p {
+      color: #aaa;
+    }
+    /* Serviços */
+    .services-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .service-card {
+      background-color: #1a1a1a;
+      padding: 30px;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 450px;
+      text-align: left;
+    }
+    .service-card .icon {
+      font-size: 2em;
+      color: #e50000;
+      margin-bottom: 15px;
+    }
+    .service-card h4 {
+      font-size: 1.5em;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+    }
+    .service-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .service-list li::before {
+      content: '✓';
+      color: #e50000;
+      margin-right: 10px;
+      font-size: 1.2em;
+    }
+    /* Resultados (Galeria Antes/Depois) */
+    .results-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .result-image {
+      width: 45%;
+      max-width: 250px;
+      height: auto;
+      background-color: #333;
+      border-radius: 5px;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .result-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px 5px 0 0;
+      min-height: 200px; /* Espaço para imagem */
+    }
+    .result-image p {
+      margin: 5px 0 0;
+      font-weight: bold;
+    }
+    /* Chamada Final */
+    .final-cta {
+      padding: 80px 0 60px 0; 
+      background-color: #000; 
+    }
+    .final-cta h2 {
+      font-size: 2em; 
+    }
+    .final-cta p {
+      font-size: 1.1em; 
+      margin-bottom: 40px; 
+      color:#aaa; 
+    }
+    .contact-button {
+        display:block; 
+        width:80%; 
+        max-width:400px; 
+        margin:20px auto; 
+        padding:15px; 
+        text-decoration:none; 
+        font-weight:bold; 
+        border-radius:5px; 
+        transition:.3s; 
+        text-align:center; 
+        font-size:.95em
+     }
+     .whatsapp {background:#e50000;color:#fff;}
+     .instagram {border:2px solid #fff;color:#fff;}
+     .whatsapp:hover {background:#ff3333;}
+     .instagram:hover {background:#333;}
+     hr {border:none;border-top:.5px solid #222;margin-top:-20px;}
+     /* Responsividade */
+     @media (min-width:768px){
+        .results-gallery{gap:30px;}
+        .result-image{width:22%;}
+        .services-grid{flex-direction:row;justify-content:center;}
+        .service-card{margin-top:auto;}
+        .hero h1{font-size:3em;}
+     }
+     @media (max-width:600px){
+        .hero{padding-top:80px;padding-bottom:40px;}
+        .section{padding-top:35px;padding-bottom:35px;}
+        .section-header{font-size:1.4em;}
+        .result-image{width:90%;}
+     }
+     /* Acessibilidade */
+     a, button {outline-color:#e50000;}
+   </style>
+</head>
+<body>
+<!-- Cabeçalho -->
+<div class="header">
+   <div class="logo">
+     <span class="red-text" style="font-weight:bold;">VINICIUS TORRES</span>
+   </div>
+   <!-- Menu hamburguer para mobile futuramente -->
+   <div class="menu-icon" aria-label="Menu">&#9776;</div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+   <div class="container">
+     <p style="font-size:.9em;">#TEAMVTORRES</p>
+     <h1>Transforme Metas em <span class="red-text">Resultados Reais</span></h1>
+     <p>Treinamento personalizado com Vinicius Torres, especialista em Fisiologia do Exercício, Hipertrofia e Emagrecimento.</p>
+     <a href="#contato" class="cta-button">QUERO INICIAR MEU PROCESSO</a>
+   </div>
+</section>
+
+<hr>
+
+<!-- Sobre -->
+<section class="section about-us">
+   <div class="container">
+     <h2 class="section-header">Quem é <span class="red-text">Vinicius Torres?</span></h2>
+     <p>Me chamo Vinicius Torres, Personal Trainer especializado em Fisiologia do Exercício, Hipertrofia e Emagrecimento. Meu foco é simples:
+       te levar do ponto onde você está hoje até o corpo e performance que você deseja, com treinos inteligentes, seguros e totalmente personalizados para sua rotina.</p>
+     <h3>Diferenciais:</h3>
+     <ul class="diferenciais-list">
+       <li>Treinamento baseado em ciência e fisiologia do exercício</li>
+       <li>Protocolos para hipertrofia avançada</li>
+       <li>Estratégias sólidas de emagrecimento sustentável</li>
+       <li>Acompanhamento próximo com ajustes semanais</li>
+       <li>Suporte direto comigo no WhatsApp</li>
+     </ul>
+   </div>
+</section>
+
+<hr>
+
+<!-- Metodologia -->
+<section class="section methodology">
+   <div class="container">
+     <h2 class="section-header">Minha <span class="red-text">Metodologia</span></h2>
+     <div class="step">
+       <h3>01</h3>
+       <h4>Avaliação Inicial</h4>
+       <p>Você me conta seus objetivos, histórico e rotina.</p>
+     </div>
+     <div class="step">
+       <h3>02</h3>
+       <h4>Planejamento Personalizado</h4>
+       <p>Crio um programa específico para você (presencial, online ou híbrido).</p>
+     </div>
+     <div class="step">
+       <h3>03</h3>
+       <h4>Execução Guiada + Ajustes</h4>
+       <p>Treino inteligente com progressões e correções.</p>
+     </div>
+     <div class="step">
+       <h3>04</h3>
+       <h4>Resultados Reais</h4>
+       <p>Acompanhamento contínuo + evolução constante.</p>
+     </div>
+   </div>
+</section>
+
+<hr>
+
+<!-- Serviços -->
+<section class="section services">
+   <div class="container">
+     <h2 class="section-header">Meus <span class="red-text">Serviços</span></h2>
+     <div class="services-grid">
+       <!-- Serviço presencial -->
+       <div class="service-card">
+         <div class="icon" aria-hidden="true">🏋️</div>
+         <h4>Treinamento Presencial</h4>
+         <ul class="service-list">
+           <li>Correção técnica</li>
+           <li>Intensidade controlada</li>
+           <li>Evolução rápida e segura</li>
+         </ul>
+       </div>
+       <!-- Serviço online -->
+       <div class="service-card">
+         <div class="icon" aria-hidden="true">💻</div>
+         <h4>Treinamento Online</h4>
+         <ul class="service-list">
+           <li>Planos de treino personalizados</li>
+           <li>Vídeos explicativos</li>
+           <li>Ajustes semanais</li>
+         </ul>
+       </div>
+     </div>
+     <!-- Serviço acompanhamento completo -->
+     <div class="service-card" style="margin-top:40px;">
+       <div class="icon" aria-hidden="true">🎯</div>
+       <h4>Acompanhamento Completo</h4>
+       <ul class="service-list">
+         <li>Treino + Estratégia</li>
+         <li>Acompanhamento diário</li>
+         <li>Revisões mensais</li>
+       </ul>
+     </div>
+   </div>
+</section>
+
+<hr>
+
+<!-- Resultados -->
+<section class="section results">
+   <div class="container">
+     <h2 class="section-header">Resultados Reais em <span class="red-text">Apenas 1 Mês</span></h2>
+     <p>Treino + Dieta totalmente personalizada</p>
+     <div class="results-gallery" aria-label="Galeria de resultados antes e depois">
+       <!-- Exemplo de imagens antes/depois -->
+       <div class="result-image">
+         <img src="https://via.placeholder.com/250x300/333333/FFFFFF?text=FOTO+ANTES" alt="Foto Antes">
+         <p>ANTES</p>
+       </div>
+       <div class="result-image">
+         <img src="https://via.placeholder.com/250x300/e50000/FFFFFF?text=FOTO+DEPOIS" alt="Foto Depois">
+         <p>DEPOIS</p>
+       </div>
+       <!-- Repita conforme necessário -->
+       <div class="result-image">
+         <img src="https://via.placeholder.com/250x300/333333/FFFFFF?text=FOTO+ANTES" alt="Foto Antes Lateral">
+         <p>ANTES</p>
+       </div>
+       <div class="result-image">
+         <img src="https://via.placeholder.com/250x300/e50000/FFFFFF?text=FOTO+DEPOIS" alt="Foto Depois Lateral">
+         <p>DEPOIS</p>
+       </div>
+     </div>
+   </div>
+</section>
+
+<hr>
+
+<!-- Chamada Final -->
+<section id="contato" class="section final-cta">
+   <div class="container">
+     <h2>Está Pronto Para Viver Sua <span class="red-text">Melhor Versão?</span></h2>
+     <p>O primeiro passo você já deu. Agora vamos transformar suas metas em realidade.</p>
+     <!-- Substitua pelo seu número real -->
+     <a href="https://wa.me/seunumerodowhatsapp" target="_blank" rel="noopener" class="contact-button whatsapp">💬 FALAR NO WHATSAPP</a>
+     <!-- Substitua pelo seu Instagram real -->
+     <a href="https://instagram.com/seuinstagram" target="_blank" rel="noopener" class="contact-button instagram">📷 ME SEGUIR NO INSTAGRAM</a>
+   </div>
+</section>
+
+<!-- Fim do Body -->
+</body>
+</html>
